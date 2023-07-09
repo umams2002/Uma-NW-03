@@ -1,7 +1,7 @@
 # Continuous Intelligence and Interactive Analytics - Working With Data
 
-- Interactive app: [cintel-03-data](https://denisecase.shinyapps.io/cintel-03-data/) - see MT Cars tab and Penguins tab
-- Repository: [cintel-03-data](https://github.com/umams2002/Uma-NW-03)
+- Interactive app: [Uma-NW-03data](https://umams2002.shinyapps.io/cintel-03-data/) - see MT Cars tab and Penguins tab
+- Repository: [Uma-NW-03data](https://github.com/umams2002/Uma-NW-03)
 - Author: [Uma M Subramanian](https://github.com/umams2002)
 
 This time, we add data. 
