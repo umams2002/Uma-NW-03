@@ -19,12 +19,17 @@ from penguins_server import get_penguins_server_functions
 from penguins_ui_inputs import get_penguins_inputs
 from penguins_ui_outputs import get_penguins_outputs
 
+from flights_server import get_flights_server_function
+from flights_ui_inputs import get_flights_inputs
+from flights_ui_outputs import get_flights_outputs
+
+
 from util_logger import setup_logger
 
 logger, logname = setup_logger(__name__)
 
 app_ui = ui.page_navbar(
-    shinyswatch.theme.lumen(),
+    shinyswatch.theme.darkly(),
     ui.nav(
         "Home",
         ui.layout_sidebar(
@@ -50,6 +55,9 @@ app_ui = ui.page_navbar(
                     ui.tags.li(
                         "To explore the Penguins Dataset, click the 'Penguins' tab."
                     ),
+                    ui.tags.li(
+                        "To explore the Flight Dataset, click the 'Flights' tab."
+                    ),
                 ),
                 ui.tags.hr(),
                 ui.h2("Main Panel with Reactive Output"),
@@ -74,12 +82,19 @@ app_ui = ui.page_navbar(
             get_penguins_outputs(),
         ),
     ),
+    ui.nav(
+        "Flights",
+        ui.layout_sidebar(
+            get_flights_inputs(),
+            get_flights_outputs(),
+        ),
+    ),
     ui.nav(ui.a("About", href="https://github.com/denisecase")),
     ui.nav(ui.a("GitHub", href="https://github.com/denisecase/cintel-03-data")),
     ui.nav(ui.a("App", href="https://denisecase.shinyapps.io/cintel-03-data/")),
     ui.nav(ui.a("Examples", href="https://shinylive.io/py/examples/")),
     ui.nav(ui.a("Themes", href="https://bootswatch.com/")),
-    title=ui.h1("Case Dashboard"),
+    title=ui.h1("Uma's Dashboard"),
 )
 
 
@@ -103,6 +118,7 @@ def server(input, output, session):
 
     get_mtcars_server_functions(input, output, session)
     get_penguins_server_functions(input, output, session)
+    get_flights_server_function(input,output,session)
 
 
 app = App(app_ui, server)

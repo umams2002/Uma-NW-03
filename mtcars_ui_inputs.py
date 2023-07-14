@@ -36,6 +36,7 @@ def get_mtcars_inputs():
                 ui.tags.li("am: Transmission (0 = Automatic, 1 = Manual)"),
                 ui.tags.li("gear: Number of forward gears"),
                 ui.tags.li("carb: Number of carburetors"),
+                ui.tags.li("fueltankcapacity: Fuel per Tank Capcity"),
             ),
             ui.output_table("cars_table"),
         ),
